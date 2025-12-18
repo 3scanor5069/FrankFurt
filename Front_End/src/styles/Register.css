@@ -1,0 +1,355 @@
+/* Contenedor principal del registro */
+.register-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8B1538 0%, #B91E4D 50%, #8B1538 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Tarjeta principal del registro */
+.register-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  width: 100%;
+  max-width: 32rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elementos decorativos */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.register-card .circle-1 {
+  top: 0;
+  left: 0;
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(135deg, #8B1538, #B91E4D);
+  transform: translate(-4rem, -4rem);
+}
+
+.register-card .circle-2 {
+  bottom: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  background: linear-gradient(135deg, #6B1E29, #8B1538);
+  transform: translate(3rem, 3rem);
+}
+
+/* Header del registro */
+.register-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #8B1538, #B91E4D);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.register-icon .icon {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.register-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #8B1538;
+  margin: 0 0 0.5rem 0;
+}
+
+.register-subtitle {
+  color: #6b7280;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Formulario del registro */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Fila de nombres */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Grupos de inputs */
+.input-group-register {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-icon-register {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon-small {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #9ca3af;
+}
+
+/* Inputs del registro */
+.register-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.75rem;
+  font-size: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  background: white;
+}
+
+.register-input:focus {
+  border-color: #8B1538;
+  box-shadow: 0 0 0 3px rgba(139, 21, 56, 0.2);
+}
+
+.register-input.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+/* Inputs de contraseña */
+.password-input {
+  padding-right: 2.75rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #8B1538;
+}
+
+/* Inputs sin icono (para nombre y apellido) */
+.name-row .register-input {
+  padding-left: 0.75rem;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Checkbox de términos */
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.custom-checkbox {
+  margin-top: 0.125rem;
+  accent-color: #8B1538;
+}
+
+.checkbox-text {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.terms-link {
+  color: #8B1538;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.terms-link:hover {
+  color: #B91E4D;
+  text-decoration: underline;
+}
+
+/* Botón de registro */
+.register-button {
+  width: 100%;
+  background: linear-gradient(135deg, #8B1538, #B91E4D);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.register-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #B91E4D, #D42B5C);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Animación de carga */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divisor */
+.register-divider {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: #d1d5db;
+}
+
+.divider-text {
+  padding: 0 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Cambio de página */
+.register-switch {
+  text-align: center;
+}
+
+.switch-text {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.switch-text li {
+  display: inline;
+  list-style: none;
+}
+
+.switch-text a {
+  color: #8B1538;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.switch-text a:hover {
+  color: #B91E4D;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .name-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .register-container {
+    padding: 0.5rem;
+  }
+  
+  .register-card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .register-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .register-card {
+    padding: 1rem;
+  }
+  
+  .register-form {
+    gap: 1rem;
+  }
+  
+  .register-title {
+    font-size: 1.25rem;
+  }
+}

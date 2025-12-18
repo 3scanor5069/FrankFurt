@@ -1,0 +1,87 @@
+.pagina-fastdelish {
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+  }
+  
+  .bienvenida-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #ffce00;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  .bienvenida-section h1 {
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  
+  .promociones-section h2,
+  .categorias-section h2 {
+    margin-bottom: 1rem;
+    color: #ff5722;
+  }
+  
+  .promo-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .promo-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .promo-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .promo-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .promo-card h3 {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .promo-card p {
+    margin: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .categorias-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+  }
+  
+  .categoria-item {
+    padding: 0.75rem 1.5rem;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .categoria-item:hover {
+    background-color: #e64a19;
+  }
+  

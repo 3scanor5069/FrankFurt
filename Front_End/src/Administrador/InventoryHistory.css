@@ -1,0 +1,481 @@
+/* InventoryHistory.css */
+.inventory-history-container {
+  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+/* Header */
+.inventory-history-header {
+  background: linear-gradient(135deg, #F5B800, #FFD700);
+  color: #7D1538;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(245, 184, 0, 0.3);
+}
+
+.inventory-history-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.inventory-history-header p {
+  margin: 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #7D1538;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #F5B800;
+  border-top: 4px solid #7D1538;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  background: #dc3545;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-retry {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-retry:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Filters Section */
+.filters-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: end;
+  border: 2px solid #F5B800;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  color: #7D1538;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 10px 12px;
+  border: 2px solid #F5B800;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  color: #7D1538;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: #7D1538;
+  box-shadow: 0 0 0 3px rgba(125, 21, 56, 0.1);
+}
+
+.btn-limpiar-filtros {
+  background: linear-gradient(135deg, #7D1538, #A01B50);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+.btn-limpiar-filtros:hover {
+  background: linear-gradient(135deg, #A01B50, #7D1538);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(125, 21, 56, 0.3);
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card.entradas {
+  border-left-color: #28a745;
+}
+
+.summary-card.salidas {
+  border-left-color: #dc3545;
+}
+
+.summary-card.total {
+  border-left-color: #F5B800;
+}
+
+.card-icon {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f8f9fa;
+  color: #7D1538;
+}
+
+.card-content h3 {
+  margin: 0 0 5px 0;
+  color: #7D1538;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-content small {
+  color: #666;
+  font-size: 12px;
+  display: block;
+}
+
+/* Table Container */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #F5B800;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table thead {
+  background: linear-gradient(135deg, #7D1538, #A01B50);
+  color: white;
+}
+
+.inventory-table th {
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inventory-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.005);
+}
+
+.inventory-table td {
+  padding: 15px 20px;
+  font-size: 14px;
+}
+
+/* Tipo específico de filas */
+.inventory-table tbody tr.tipo-entrada {
+  border-left: 4px solid #28a745;
+}
+
+.inventory-table tbody tr.tipo-salida {
+  border-left: 4px solid #dc3545;
+}
+
+/* Celdas específicas */
+.fecha-cell {
+  color: #666;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+}
+
+.producto-cell strong {
+  color: #7D1538;
+  font-size: 15px;
+}
+
+.tipo-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tipo-badge.tipo-entrada {
+  background: #d4edda;
+  color: #155724;
+}
+
+.tipo-badge.tipo-salida {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.motivo-cell {
+  font-size: 13px;
+}
+
+.motivo-text {
+  padding: 3px 8px;
+  background: #e9ecef;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.cantidad {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cantidad.tipo-entrada {
+  color: #28a745;
+}
+
+.cantidad.tipo-salida {
+  color: #dc3545;
+}
+
+.observaciones-cell {
+  max-width: 200px;
+}
+
+.observaciones-text {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #666;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* No Data */
+.no-data {
+  padding: 60px 20px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.no-data p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Table Footer */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 14px;
+}
+
+.btn-refresh {
+  background: linear-gradient(135deg, #F5B800, #FFD700);
+  color: #7D1538;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-refresh:hover {
+  background: linear-gradient(135deg, #FFD700, #F5B800);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 184, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .inventory-table {
+    font-size: 13px;
+  }
+  
+  .observaciones-cell {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inventory-history-container {
+    padding: 10px;
+  }
+  
+  .inventory-history-header {
+    padding: 20px;
+  }
+  
+  .inventory-history-header h1 {
+    font-size: 24px;
+  }
+  
+  .filters-section {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .inventory-table {
+    min-width: 800px;
+  }
+  
+  .inventory-table th,
+  .inventory-table td {
+    padding: 10px;
+  }
+  
+  .observaciones-cell {
+    max-width: 120px;
+  }
+  
+  .table-footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .inventory-table th,
+  .inventory-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  .tipo-badge {
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+  
+  .cantidad {
+    font-size: 14px;
+  }
+  
+  .observaciones-cell {
+    max-width: 100px;
+  }
+  
+  .motivo-text {
+    font-size: 11px;
+    padding: 2px 6px;
+  }
+}

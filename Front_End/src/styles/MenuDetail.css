@@ -1,0 +1,66 @@
+/* src/styles/MenuDetail.css */
+
+.menu-detail {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  gap: 40px;
+}
+
+.menu-detail img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.detail-info h1 {
+  font-size: 32px;
+  color: #e10027;
+  margin-bottom: 10px;
+}
+
+.detail-info .description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-info ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.detail-info li {
+  font-size: 14px;
+  color: #444;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: black; /* Cambia el texto a negro */
+  margin-bottom: 20px;
+  border: 2px solid #f8b400; /* Borde amarillo */
+  border-radius: 1rem;
+  padding: 10px; /* Añade un poco de espacio dentro del borde */
+}
+
+
+button {
+  background-color: #e10027;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c4001f;
+}

@@ -1,0 +1,241 @@
+.seleccion-mesas {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-title {
+  color: var(--primary-red);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+  color: var(--dark-gray);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(244, 185, 64, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card.ocupada {
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+}
+
+.stat-card.ocupada .stat-number,
+.stat-card.ocupada .stat-label {
+  color: var(--white);
+}
+
+.stat-card.esperando {
+  background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-red);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 12px 20px;
+  border: 2px solid var(--primary-yellow);
+  background-color: var(--white);
+  color: var(--primary-red);
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.filtro-btn:hover {
+  background-color: var(--primary-yellow);
+  transform: translateY(-2px);
+}
+
+.filtro-btn.active {
+  background: linear-gradient(135deg, var(--primary-yellow), var(--light-yellow));
+  color: var(--primary-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 185, 64, 0.4);
+}
+
+.mesas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.no-mesas {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, var(--white), var(--light-gray));
+  border-radius: 20px;
+  border: 2px dashed var(--gray);
+}
+
+.no-mesas-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.no-mesas h3 {
+  color: var(--primary-red);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.no-mesas p {
+  color: var(--dark-gray);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.refresh-section {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid var(--gray);
+}
+
+.refresh-btn {
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(139, 38, 53, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .seleccion-mesas {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .estadisticas {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .stat-card {
+    padding: 20px 15px;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.9rem;
+  }
+  
+  .filtros {
+    gap: 8px;
+  }
+  
+  .filtro-btn {
+    padding: 10px 16px;
+    font-size: 0.8rem;
+  }
+  
+  .mesas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .no-mesas {
+    padding: 40px 15px;
+  }
+  
+  .no-mesas-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filtros {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filtro-btn {
+    min-width: 200px;
+  }
+  
+  .mesas-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .estadisticas {
+    grid-template-columns: 1fr;
+  }
+}

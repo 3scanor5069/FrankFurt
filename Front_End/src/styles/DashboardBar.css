@@ -1,0 +1,286 @@
+:root {
+  /* Colores principales de la marca */
+  --primary-yellow: #F2C847;
+  --primary-burgundy: #8B1538;
+  --dark-burgundy: #6B0F2A;
+  --light-yellow: #F5D563;
+  --pale-yellow: #FDF6E3;
+  
+  /* Colores complementarios */
+  --white: #FFFFFF;
+  --light-gray: #F8F9FA;
+  --medium-gray: #E2E8F0;
+  --dark-gray: #64748B;
+  --text-dark: #1E293B;
+  --text-light: #64748B;
+  
+  /* Colores de estado */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+  --info: #3B82F6;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+  
+  /* Radios */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Tamaños del sidebar */
+  --sidebar-width: 280px;
+  --sidebar-collapsed-width: 70px;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--dark-burgundy) 100%);
+  color: var(--white);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all var(--transition-normal);
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+
+/* Footer del sidebar */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Overlay para móvil */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsivo - Desktop Grande */
+@media (min-width: 1200px) {
+  .sidebar {
+    transform: translateX(0);
+    position: relative;
+  }
+  
+  .main-content-nav {
+    margin-left: 0;
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  .dashboard-content {
+    padding: 2rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo - Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .sidebar {
+    transform: translateX(0);
+    position: relative;
+  }
+  
+  .main-content-nav {
+    margin-left: 0;
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  .menu-button {
+    display: none;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsivo - Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar {
+    width: 250px;
+  }
+  
+  .dashboard-content {
+    padding: 1.25rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .metric-card {
+    padding: 1.25rem;
+  }
+  
+  .chart-card {
+    padding: 1.25rem;
+    min-height: 350px;
+  }
+  
+  .refresh-button span {
+    display: none;
+  }
+}
+
+
+/* Responsivo - Móvil Pequeño */
+@media (max-width: 575px) {
+  .header-dash {
+    padding: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .header-right-dash {
+    gap: 0.5rem;
+  }
+  
+  .dashboard-content {
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.125rem;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .metric-card {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    min-height: auto;
+  }
+  
+  .metric-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+  }
+  
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .chart-card {
+    padding: 0.75rem;
+    min-height: 250px;
+  }
+  
+  .chart-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .users-table {
+    font-size: 0.75rem;
+    min-width: 500px;
+  }
+  
+  .table-header th,
+  .table-row td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .table-title {
+    padding: 1rem 0.75rem 0;
+    font-size: 1rem;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .refresh-button {
+    padding: 0.5rem;
+    min-width: 40px;
+  }
+  
+  .refresh-button span {
+    display: none;
+  }
+  
+  .sidebar {
+    width: 100vw;
+  }
+  
+  .logo {
+    padding: 1rem;
+    min-height: 60px;
+  }
+  
+  .nav-item {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+}
