@@ -77,27 +77,31 @@ app.use((req, res) => {
   });
 });
 
-// Puerto
-const PORT = process.env.PORT || 3006;
-
-app.listen(PORT, () => {
-  console.log('🚀 =========================================');
-  console.log(`🍔 Servidor Frank Furt corriendo en puerto ${PORT}`);
-  console.log(`📍 URL: http://localhost:${PORT}`);
-  console.log('📡 Endpoints disponibles:');
-  console.log('   ✅ Users (CRUD):  GET/POST/PUT/DELETE /api/users');
-  console.log('   ✅ Register:      POST /api/users/register');
-  console.log('   ✅ Login:         POST /api/users/login');
-  console.log('   ✅ Profile:       GET /api/users/profile');
-  console.log('   ✅ Menu:          /api/menu');
-  console.log('   ✅ Dashboard:     /api/dashboard');
-  console.log('   ✅ Inventory:     /api/inventory');
-  console.log('   ✅ History:       /api/inventoryHistory');
-  console.log('   ✅ Venta:         /api/venta');
-  console.log('   ✅ Manual Sale:   /api/manualSale');
-  console.log('   ✅ Orders:        /api/pedidos');
-  console.log('   ✅ Reports:       /api/reports');
-  console.log('🚀 =========================================');
-});
-
+// Exporta la app para Vercel (Serverless Function) y para pruebas.
 module.exports = app;
+
+// Puerto (solo para desarrollo local). En Vercel NO necesitamos levantar un listener manual.
+// Esto evita errores de puertos en entorno serverless.
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3006;
+
+  app.listen(PORT, () => {
+    console.log('🚀 =========================================');
+    console.log(`🍔 Servidor Frank Furt corriendo en puerto ${PORT}`);
+    console.log(`📍 URL: http://localhost:${PORT}`);
+    console.log('📡 Endpoints disponibles:');
+    console.log('   ✅ Users (CRUD):  GET/POST/PUT/DELETE /api/users');
+    console.log('   ✅ Register:      POST /api/users/register');
+    console.log('   ✅ Login:         POST /api/users/login');
+    console.log('   ✅ Profile:       GET /api/users/profile');
+    console.log('   ✅ Menu:          /api/menu');
+    console.log('   ✅ Dashboard:     /api/dashboard');
+    console.log('   ✅ Inventory:     /api/inventory');
+    console.log('   ✅ History:       /api/inventoryHistory');
+    console.log('   ✅ Venta:         /api/venta');
+    console.log('   ✅ Manual Sale:   /api/manualSale');
+    console.log('   ✅ Orders:        /api/pedidos');
+    console.log('   ✅ Reports:       /api/reports');
+    console.log('🚀 =========================================');
+  });
+}
